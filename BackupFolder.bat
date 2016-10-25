@@ -40,7 +40,12 @@ ECHO The backup destination folder would be %2/%Year%-%Month%-%Day%
 ::TODO Check to confirm that the log file was successfully created else throw BadTarget error
 
 ::TODO Perform actual folder copy and append output to the log file
-
+	xcopy /s/e/v %1 [%2/%Year%-%Month%-%Day%] >> %logdir% 
+	::This will copy everything in the originating directory/folder including empty directories. It will
+	::also verify the copy against the original to make sure it is copied correctly. 
+	::If I understand correctly the syntax %1 [%2/%Year%-%Month%-%Day%] tells it to copy from location 1 
+	::(FolderToBackup) to location 2 (BackupDestination) with today's date in the YYYY-MM-DD format
+	
 ::TODO Parse log file for error strings to determine copy success or failure
 
 ::TODO Remove DEBUG BLOCKS replace with appropriate user output
