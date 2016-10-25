@@ -33,7 +33,11 @@ else   #we have enough arguments so do backup
    # TODO Check to confirm FolderToBackup exists else throw BadSource error
 
    # TODO Write the empty log file to destination folder
+   touch backuplog.log
+   ls
+   
    # TODO Check to confirm that the log file was successfully created else throw BadTarget error
+   
 
    # TODO Perform actual folder copy and append output to the log file
 
@@ -41,4 +45,6 @@ else   #we have enough arguments so do backup
 
    # TODO Remove DEBUG BLOCKS replace with appropriate user output
  
-fi
+if
+
+
