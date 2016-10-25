@@ -37,7 +37,16 @@ ECHO The backup destination folder would be %2/%Year%-%Month%-%Day%
 ::TODO Check to confirm FolderToBackup exists else throw BadSource error
 
 ::TODO Write the empty log file to destination folder
+
+	New-Item [%2/%Year%-%Month%-%Day%]\log_file.txt -type file
+
+		::will this write the new empty log file to the destination folder?
+
+	SET log_file.txt=%logdir%
+
 ::TODO Check to confirm that the log file was successfully created else throw BadTarget error
+
+	
 
 ::TODO Perform actual folder copy and append output to the log file
 	xcopy /s/e/v %1 [%2/%Year%-%Month%-%Day%] >> %logdir% 
